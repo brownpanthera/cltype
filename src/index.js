@@ -4,6 +4,7 @@ import readline from "readline";
 import chalk from "chalk";
 import Boxen from "./boxen.js";
 import wordString from "./randomWord.js";
+import cliCursor from 'cli-cursor';
 
 console.clear();
 
@@ -33,9 +34,14 @@ function displayText(input, provided) {
       output += provided[i]; // Remaining characters from the provided text
     }
   }
+
+  console.clear();
+
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
-  process.stdout.write(output);
+  process.stdout.write(Boxen(output));
+
+  cliCursor.hide()
 }
 
 // Start capturing user input

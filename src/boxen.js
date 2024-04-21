@@ -2,6 +2,7 @@ import boxen from "boxen";
 
 const termWidth = process.stdout.columns;
 const termHeight = process.stdout.rows;
+
 const Boxen = (text) => {
   return boxen(text, {
     title: "prompt",
